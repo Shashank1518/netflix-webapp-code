@@ -6,6 +6,10 @@ pipeline {
         git(url: 'https://github.com/devopsbyraham/jenkins-java-project.git', branch: 'master')
       }
     }
-
+    stage('Build, Test, Deploy') {
+      steps {
+        sh 'mvn clean package'
+      }
+    }
   }
 }
